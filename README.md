@@ -10,3 +10,10 @@ ensure your incus vm has 2 cpus as required by minikube, can do so by doing:
 ```
 incus config set <vm-name> limits.cpu 2
 ```
+
+# List of installs:
+- git
+- curl
+- minikube
+- docker
+- kubectl (comes with minikube when you do `minikube start --force`)

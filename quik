@@ -29,4 +29,6 @@ else
     echo "Skipping kubectl — kubectl.sh not found."
 fi
 
-echo "[quik] Done! 🎉"
+echo "[quik] Done! Deleting installer... 🎉"
+cd ..
+rm -rf quik

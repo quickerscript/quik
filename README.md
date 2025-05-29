@@ -1,2 +1,10 @@
 # quik
-quick isntaller for incus vm's to run kubernetes clusters
+quick installer for incus vm's to run kubernetes clusters
+
+just run:
+```
+apt install -y git
+git clone https://github.com/quickerscript/quik.git
+cd quik
+./quik
+```

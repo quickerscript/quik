@@ -32,4 +32,4 @@ fi
 echo "[quik] Done! Deleting installer... 🎉"
 cd ~
 rm -rf quik
-cd~
+cd ~

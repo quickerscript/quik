@@ -1,7 +1,8 @@
 # quik
 quick installer for incus vm's to run kubernetes clusters
 
-just run:
+enter your incus vm, by doing `incus shell <vm-name>`
+then in root run:
 ```
 apt install -y git && git clone https://github.com/quickerscript/quik.git && cd quik && chmod +x quik && ./quik
 ```

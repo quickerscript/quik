@@ -1,20 +1,32 @@
 #!/bin/bash
 set -e
 
-echo "[quik] Installing base tools..."
-chmod +x curl.sh
-./curl.sh
+echo "[quik] Installing curl..."
+sudo apt update 
+sudo apt install -y curl
 
-echo "[quik] Installing Docker..."
-chmod +x docker.sh
-./docker.sh
+if [ -f ./docker.sh ]; then
+    echo "Installing Docker..."
+    chmod +x docker.sh
+    ./docker.sh
+else
+    echo "Skipping Docker — docker.sh not found."
+fi
 
-echo "[quik] Installing Minikube..."
-chmod +x minikube.sh
-./minikube.sh
+if [ -f ./minikube.sh ]; then
+    echo "Installing Minikube..."
+    chmod +x minikube.sh
+    ./minikube.sh
+else
+    echo "Skipping Minikube — minikube.sh not found."
+fi
 
-echo "[quik] Installing Kubectl..."
-chmod +x kubectl.sh
-./kubectl.sh
+if [ -f ./kubectl.sh ]; then
+    echo "Installing kubectl..."
+    chmod +x kubectl.sh
+    ./kubectl.sh
+else
+    echo "Skipping kubectl — kubectl.sh not found."
+fi
 
 echo "[quik] Done! 🎉"

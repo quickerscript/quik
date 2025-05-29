@@ -16,4 +16,4 @@ incus config set <vm-name> limits.cpu 2
 - curl
 - minikube
 - docker
-- kubectl (comes with minikube when you do `minikube start --force`)
+- kubectl

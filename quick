@@ -2,15 +2,15 @@
 set -e
 
 echo "[quik] Installing base tools..."
-./install/curl.sh
+./curl.sh
 
 echo "[quik] Installing Docker..."
-./install/docker.sh
+./docker.sh
 
 echo "[quik] Installing Minikube..."
-./install/minikube.sh
+./minikube.sh
 
 echo "[quik] Installing Kubectl..."
-./install/kubectl.sh
+./kubectl.sh
 
 echo "[quik] Done! 🎉"

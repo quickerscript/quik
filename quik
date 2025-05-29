@@ -2,15 +2,19 @@
 set -e
 
 echo "[quik] Installing base tools..."
+chmod +x curl.sh
 ./curl.sh
 
 echo "[quik] Installing Docker..."
+chmod +x curl.sh
 ./docker.sh
 
 echo "[quik] Installing Minikube..."
+chmod +x minikube.sh
 ./minikube.sh
 
 echo "[quik] Installing Kubectl..."
+chmod +x kubectl.sh
 ./kubectl.sh
 
 echo "[quik] Done! 🎉"

@@ -21,14 +21,6 @@ else
     echo "Skipping Minikube — minikube.sh not found."
 fi
 
-if [ -f ./kubectl.sh ]; then
-    echo "Installing kubectl..."
-    chmod +x kubectl.sh
-    ./kubectl.sh
-else
-    echo "Skipping kubectl — kubectl.sh not found."
-fi
-
 echo "[quik] Done! Deleting installer... 🎉"
 cd ..
 rm -rf quik

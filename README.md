@@ -17,3 +17,5 @@ incus config set <vm-name> limits.cpu 2
 - minikube
 - docker
 - kubectl
+
+If you dont want to install a certain one, instead of copying the multiline bash, just manually clone and delete the individual .sh of what you don't want, then proceed with ./quik

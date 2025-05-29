@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+echo "[quik] Installing base tools..."
+./install/curl.sh
+
+echo "[quik] Installing Docker..."
+./install/docker.sh
+
+echo "[quik] Installing Minikube..."
+./install/minikube.sh
+
+echo "[quik] Installing Kubectl..."
+./install/kubectl.sh
+
+echo "[quik] Done! 🎉"

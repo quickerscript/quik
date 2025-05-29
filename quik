@@ -6,7 +6,7 @@ chmod +x curl.sh
 ./curl.sh
 
 echo "[quik] Installing Docker..."
-chmod +x curl.sh
+chmod +x docker.sh
 ./docker.sh
 
 echo "[quik] Installing Minikube..."

@@ -1,33 +1,49 @@
 #!/bin/bash
 set -e
 
+AUTO_YES=false
+
+# Check if "all" or "-all" argument is passed
+if [[ "$1" == "all" || "$1" == "-all" ]]; then
+    AUTO_YES=true
+fi
+
 echo "[quik] Installing curl..."
 sudo apt update 
 sudo apt install -y curl
 
-if [ -f ./docker.sh ]; then
-    echo "Installing Docker..."
-    chmod +x docker.sh
-    ./docker.sh
-else
-    echo "Skipping Docker — docker.sh not found."
-fi
+prompt_and_run() {
+    local name="$1"
+    local script="$2"
 
-if [ -f ./minikube.sh ]; then
-    echo "Installing Minikube..."
-    chmod +x minikube.sh
-    ./minikube.sh
-else
-    echo "Skipping Minikube — minikube.sh not found."
-fi
+    if [ -f "$script" ]; then
+        if [ "$AUTO_YES" = true ]; then
+            echo "Installing $name (auto-confirmed)..."
+            chmod +x "$script"
+            ./"$script"
+        else
+            read -p $'\033[1;36mDo you want to install '"$name"$'? [y/N] \033[0m' answer
+            case "$answer" in
+                [Yy]* )
+                    echo "Installing $name..."
+                    chmod +x "$script"
+                    ./"$script"
+                    ;;
+                * )
+                    echo "Skipping $name."
+                    ;;
+            esac
+        fi
+    else
+        echo "Skipping $name — $script not found."
+    fi
+}
 
-if [ -f ./kubectl.sh ]; then
-    echo "Installing Kubectl..."
-    chmod +x kubectl.sh
-    ./kubectl.sh
-else
-    echo "Skipping Kubectl — kubectl.sh not found."
-fi
+prompt_and_run "Docker" "installs/docker.sh"
+prompt_and_run "Minikube" "installs/minikube.sh"
+prompt_and_run "Kubectl" "installs/kubectl.sh"
+prompt_and_run "Go" "installs/go.sh"
+prompt_and_run "Kind" "installs/kind.sh"
 
 echo "[quik] Done! Deleting installer... 🎉"
 cd ~

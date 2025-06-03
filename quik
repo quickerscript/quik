@@ -39,6 +39,7 @@ prompt_and_run() {
     fi
 }
 
+prompt_and_run "Incus" "installs/incus.sh"
 prompt_and_run "Docker" "installs/docker.sh"
 prompt_and_run "Minikube" "installs/minikube.sh"
 prompt_and_run "Kubectl" "installs/kubectl.sh"

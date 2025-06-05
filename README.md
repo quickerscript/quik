@@ -23,3 +23,4 @@ incus config set <vm-name> limits.cpu 2
 - golang
 - docker
 - kubectl
+- google chrome

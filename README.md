@@ -24,3 +24,4 @@ incus config set <vm-name> limits.cpu 2
 - docker
 - kubectl
 - google chrome
+- nodejs and npm

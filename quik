@@ -47,6 +47,7 @@ prompt_and_run "Go" "installs/go.sh"
 prompt_and_run "Kind" "installs/kind.sh"
 prompt_and_run "Make" "installs/make.sh"
 prompt_and_run "Google Chrome" "installs/chrome.sh"
+prompt_and_run "Node and npm" "installs/nodenpm.sh"
 
 echo "[quik] Done! Deleting installer... 🎉"
 cd ~

@@ -7,7 +7,3 @@ rm -rf go1.24.3.linux-amd64.tar.gz
 
 export PATH=$PATH:/usr/local/go/bin
 source ~/.bashrc
-sudo rm -rf /usr/bin/wget
-sudo rm -rf /usr/bin/wget
-sudo rm -rf /usr/share/man/man1/wget.1.gz 
-sudo rm -rf /usr/share/info/wget.info.gz
